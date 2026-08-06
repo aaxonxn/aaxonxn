@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610">
+    
+    <defs>
+        <style>
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes typeIn {
+                0% { clip-path: inset(0 100% 0 0); }
+                100% { clip-path: inset(0 0 0 0); }
+            }
+
+            @keyframes pulseStatus {
+                0% { opacity: 0.4; }
+                50% { opacity: 1; }
+                100% { opacity: 0.4; }
+            }
+
+            @keyframes breathePortrait {
+                0% { opacity: 0.98; }
+                50% { opacity: 1; }
+                100% { opacity: 0.98; }
+            }
+
+            @keyframes driftParticle1 {
+                0% { transform: translateY(0px); opacity: 0.2; }
+                50% { transform: translateY(-4px); opacity: 0.8; }
+                100% { transform: translateY(0px); opacity: 0.2; }
+            }
+
+            @keyframes driftParticle2 {
+                0% { transform: translateY(0px); opacity: 0.2; }
+                50% { transform: translateY(4px); opacity: 0.6; }
+                100% { transform: translateY(0px); opacity: 0.2; }
+            }
+
+            .boot-layer {
+                opacity: 0;
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+
+            #grid { animation-delay: 0.3s; }
+            #portrait-frame { animation-delay: 0.6s; }
+            #portrait-img { 
+                animation: fadeIn 1s ease-out 0.9s forwards, breathePortrait 8s ease-in-out 2s infinite; 
+                opacity: 0;
+            }
+            #terminal-header { animation-delay: 1.2s; }
+            #research-panel { animation-delay: 1.5s; }
+            #projects-panel { animation-delay: 1.8s; }
+            
+            #status-dot {
+                opacity: 0;
+                animation: fadeIn 0.3s ease-out 2.1s forwards, pulseStatus 2s ease-in-out 2.4s infinite;
+            }
+            #status-text { animation-delay: 2.1s; }
+            
+            .particle { opacity: 0; }
+            .particle-1 { animation: fadeIn 1s ease-out 2.4s forwards, driftParticle1 8s ease-in-out 3.4s infinite; }
+            .particle-2 { animation: fadeIn 1s ease-out 2.6s forwards, driftParticle2 10s ease-in-out 3.6s infinite; }
+
+            .title { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 800; font-size: 36px; fill: #FFFFFF; letter-spacing: 1px; }
+            .subtitle { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 14px; fill: #38BDF8; letter-spacing: 0.5px; }
+            .label { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; fill: #94A3B8; text-transform: uppercase; letter-spacing: 1px; }
+            .data { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 14px; fill: #FFFFFF; }
+            .data-dim { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 14px; fill: #94A3B8; }
+            
+        </style>
+        
+        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.03"/>
+            <circle cx="40" cy="40" r="1" fill="#FFFFFF" opacity="0.06"/>
+        </pattern>
+        
+        <clipPath id="portrait-clip">
+            <rect x="0" y="0" width="360" height="460" rx="16"/>
+        </clipPath>
+    </defs>
+
+    <g id="background">
+        <rect width="1180" height="610" fill="#09090B"/>
+    </g>
+
+    <g id="grid" class="boot-layer">
+        <rect width="1180" height="610" fill="url(#grid-pattern)"/>
+    </g>
+
+    <g id="decorative-geometry" class="boot-layer" style="animation-delay: 0.4s;">
+        <path d="M 20 20 L 40 20 M 20 20 L 20 40" fill="none" stroke="#94A3B8" stroke-width="2" opacity="0.3"/>
+        <path d="M 1160 20 L 1140 20 M 1160 20 L 1160 40" fill="none" stroke="#94A3B8" stroke-width="2" opacity="0.3"/>
+        <path d="M 20 590 L 40 590 M 20 590 L 20 570" fill="none" stroke="#94A3B8" stroke-width="2" opacity="0.3"/>
+        <path d="M 1160 590 L 1140 590 M 1160 590 L 1160 570" fill="none" stroke="#94A3B8" stroke-width="2" opacity="0.3"/>
+        <line x1="448" y1="80" x2="448" y2="530" stroke="#27272A" stroke-width="1"/>
+    </g>
+
+    <g id="portrait" transform="translate(44, 75)">
+        <image id="portrait-img" href="data:image/png;base64,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" x="0" y="0" width="360" height="460" clip-path="url(#portrait-clip)" preserveAspectRatio="xMidYMid slice"/>
+    </g>
+
+    <g id="portrait-frame" class="boot-layer" transform="translate(44, 75)">
+        <rect x="0" y="0" width="360" height="460" rx="16" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.8"/>
+        
+        <!-- Corner Accents -->
+        <rect x="-2" y="-2" width="8" height="8" rx="2" fill="#09090B" stroke="#38BDF8" stroke-width="1"/>
+        <rect x="354" y="-2" width="8" height="8" rx="2" fill="#09090B" stroke="#38BDF8" stroke-width="1"/>
+        <rect x="-2" y="454" width="8" height="8" rx="2" fill="#09090B" stroke="#38BDF8" stroke-width="1"/>
+        <rect x="354" y="454" width="8" height="8" rx="2" fill="#09090B" stroke="#38BDF8" stroke-width="1"/>
+
+        <!-- Top Label -->
+        <rect x="20" y="-10" width="120" height="20" fill="#09090B"/>
+        <text x="25" y="4" class="label" fill="#38BDF8">NEURAL PROFILE</text>
+        
+        <!-- Bottom AI Mark -->
+        <text x="290" y="445" class="label" fill="#38BDF8" opacity="0.5">AI_PROFILE</text>
+    </g>
+
+    <g id="information-panel" transform="translate(488, 75)">
+        
+        <!-- HEADER -->
+        <g id="terminal-header" class="boot-layer">
+            <rect x="-20" y="-3" width="3" height="30" fill="#FF6B00"/>
+            <text x="0" y="25" class="title">AARON GEORGE</text>
+            <text x="0" y="55" class="subtitle">Artificial Intelligence Engineer</text>
+            <text x="0" y="80" class="label" fill="#94A3B8">Machine Learning • Robotics • Computer Vision • Multi-Agent Systems</text>
+            <line x1="-20" y1="105" x2="600" y2="105" stroke="#27272A" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        
+        <!-- SYSTEM INFO -->
+        <g id="system-info" class="boot-layer" style="animation-delay: 1.3s;">
+            <text x="0" y="140" class="data-dim">Engineer ...... </text><text x="140" y="140" class="data">Aaron George</text>
+            <text x="0" y="165" class="data-dim">Role .......... </text><text x="140" y="165" class="data">AI Systems Architect</text>
+            <text x="0" y="190" class="data-dim">Location ...... </text><text x="140" y="190" class="data">Kerala, India</text>
+            <text x="0" y="215" class="data-dim">Education ..... </text><text x="140" y="215" class="data">B.Tech CSE (AI)</text>
+            <text x="0" y="240" class="data-dim">Status ........ </text><text x="140" y="240" class="data">Building Intelligent Systems</text>
+        </g>
+
+        <!-- RESEARCH DOMAINS -->
+        <g id="research-panel" class="boot-layer">
+            <rect x="0" y="280" width="280" height="195" fill="none" stroke="#27272A" stroke-width="1" rx="4"/>
+            <text x="20" y="310" class="label">Research Domains</text>
+            <line x1="20" y1="322" x2="260" y2="322" stroke="#27272A" stroke-width="1"/>
+            
+            <text x="20" y="352" class="data" fill="#38BDF8">&#x25B8;</text>
+            <text x="35" y="352" class="data">Machine Learning</text>
+            
+            <text x="20" y="382" class="data" fill="#38BDF8">&#x25B8;</text>
+            <text x="35" y="382" class="data">Computer Vision</text>
+            
+            <text x="20" y="412" class="data" fill="#38BDF8">&#x25B8;</text>
+            <text x="35" y="412" class="data">Robotics</text>
+            
+            <text x="20" y="442" class="data" fill="#38BDF8">&#x25B8;</text>
+            <text x="35" y="442" class="data">Multi-Agent Systems</text>
+        </g>
+
+        <!-- CURRENT PROJECTS -->
+        <g id="projects-panel" class="boot-layer">
+            <rect x="320" y="280" width="310" height="195" fill="none" stroke="#27272A" stroke-width="1" rx="4"/>
+            <text x="340" y="310" class="label">Featured Projects</text>
+            <line x1="340" y1="322" x2="610" y2="322" stroke="#27272A" stroke-width="1"/>
+            
+            <text x="340" y="352" class="data" fill="#FF6B00">&#x25B8;</text>
+            <text x="355" y="352" class="data">AgriMind AI</text>
+            
+            <text x="340" y="382" class="data" fill="#FF6B00">&#x25B8;</text>
+            <text x="355" y="382" class="data">DRISHTI</text>
+            
+            <text x="340" y="412" class="data" fill="#FF6B00">&#x25B8;</text>
+            <text x="355" y="412" class="data">Swarm Intelligence</text>
+            
+            <text x="340" y="442" class="data" fill="#FF6B00">&#x25B8;</text>
+            <text x="355" y="442" class="data">FlowAPI</text>
+        </g>
+
+    </g>
+
+    <!-- LAYER 8: STATUS INDICATOR -->
+    <g id="status-indicator" transform="translate(1030, 40)">
+        <rect x="-10" y="-15" width="130" height="26" rx="4" fill="#09090B" stroke="#27272A" stroke-width="1"/>
+        <circle id="status-dot" cx="0" cy="-2" r="4" fill="#10B981"/>
+        <text id="status-text" x="12" y="2" class="label boot-layer" fill="#10B981">STATUS: ONLINE</text>
+    </g>
+
+    <!-- LAYER 9: DECORATIVE PARTICLES (Subtle Animations) -->
+    <g id="accent-particles">
+        <!-- Near portrait -->
+        <rect x="35" y="80" width="2" height="2" fill="#38BDF8" class="particle particle-1"/>
+        <rect x="410" y="520" width="2" height="2" fill="#38BDF8" class="particle particle-2"/>
+        <rect x="30" y="510" width="2" height="2" fill="#FF6B00" class="particle particle-1"/>
+        
+        <!-- Near info panel -->
+        <rect x="1135" y="300" width="2" height="2" fill="#38BDF8" class="particle particle-2"/>
+        <rect x="468" y="550" width="2" height="2" fill="#FF6B00" class="particle particle-1"/>
+    </g>
+
+    <!-- LAYER 10: METADATA -->
+    <metadata>
+        <creator>Aaron George Profile Generator</creator>
+        <version>1.1</version>
+        <theme>dark</theme>
+    </metadata>
+</svg>
